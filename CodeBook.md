@@ -1,4 +1,6 @@
-Introduction
+# Codebook
+
+## Introduction
 
 This file describes the data, the variables, and the work that has been performed to clean up the data.
 
@@ -12,19 +14,19 @@ Source code run_analysis.R does the following:
     6. Creates a second, independent tidy dataset with an average of each variable for each each activity and each subject
         - for every unique combination of activity and subject, the average of variable is presented
 
-Data
+## Data
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
 
-For each record it is provided:
+### For each record it is provided:
 - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
 - Triaxial Angular velocity from the gyroscope. 
 - A 561-feature vector with time and frequency domain variables. 
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
-The dataset includes the following files:
+### The dataset includes the following files:
 
 - 'README.txt'
 
@@ -46,9 +48,16 @@ The following files are available for the train and test data. Their description
 
 - 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
+## Variables
+-  mergeData: the merging of the test and training datasets
+-  mergeLabel: the merging of the test and training labels
+-  mergeSubject: the merging of the test and training subjects
+-  AllData: the merging of the 3 merged files above; used to calculate the means and standard deviations of each measurement
+-  newData: a merged datasets of all files withe nice descriptoie headers
+-  avgData: uses a data table based on newData (called dt) that calculate the mean and standard for each unique subject/activity combination
 
 
-Getting and cleaning data
+## Getting and cleaning data
 
 The data files are downloaded to the working directory and read in using read.table
 First, I merge the Training and Test data, the Training and Test label data, and the Training and Test label data into separate merged files.
