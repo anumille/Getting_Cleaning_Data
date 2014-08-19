@@ -40,4 +40,4 @@ newData<- cbind(mergeSubject,mergeLabel,mergeData) #combines all three datasets 
 library(data.table)
 dt<- data.table(newData)
 avgData<- dt[, lapply(.SD, mean), by=c("Subject", "Activity")]
-write.table(avgData,file="tidy.csv",sep=",",row.names = FALSE)
+write.table(avgData,file="tidy.txt",sep=",",row.names = FALSE)
